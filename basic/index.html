@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <h1>Add ReactJS to website</h1>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        // DOM
+        const newElement = document.createElement('h1');
+        newElement.textContent = 'Hello ReactJS';
+        newElement.title = 'Hello';
+        newElement.classList.add('heading');
+
+        // React element
+        const newElement2 = React.createElement('h1', {title: 'Hello', className: 'heading'}, 'Hello ReactJS');
+
+        const course = [
+            {id: 1, name: 'ReactJS'},
+            {id: 2, name: 'Angular'},
+            {id: 3, name: 'VueJS'}
+        ];
+        const newElement3 = React.createElement('ul', null,
+            course.map(item => React.createElement('li', {key: item.id}, item.name))
+        );
+        console.log(document.querySelector('#root'));
+        const jsx1 = (
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+        )
+        console.log(jsx1);
+
+        ReactDOM.render(jsx1, document.getElementById('root'));
+
+    </script>
+</body>
+</html>
